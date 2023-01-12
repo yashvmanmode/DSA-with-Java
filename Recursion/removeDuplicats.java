@@ -20,6 +20,7 @@ public class removeDuplicats{
             remove_Duplicates(str, idx+1, sb, maps);
         }
     }
+    ///////////////////////////////////////
 
     public static void main(String[] args) {
         String str = "apnacollege";
