@@ -17,6 +17,25 @@ public class BubbleSort {
         
     }
 
+    public static void Modified_bubbleSort(int arr[]) {
+
+        for (int iter=0; iter<arr.length-1; iter++) {
+            Boolean swap = false;
+            for (int j=0; j<arr.length-1-iter; j++) {
+
+                if (arr[j] > arr[j+1]){
+                    //swap
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                    swap = true;
+                }
+            }
+            if (swap == false)
+                break;
+        }
+    }
+
     public static void Print_arr(int arr[]) {
         for (int i=0; i<arr.length; i++) {
             System.out.print(arr[i] + " ");
@@ -28,7 +47,7 @@ public class BubbleSort {
         int arr[] = {5, 4, 1, 3, 2};
 
         Print_arr(arr);
-        Bubble_Sort(arr);
+        Modified_bubbleSort(arr);
         System.out.print("The sorted array is : ");
         Print_arr(arr);
     }
