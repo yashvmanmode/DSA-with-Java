@@ -10,7 +10,7 @@ public class backtrack_array {
         //recursive work
         arr[idx] = val;
         changeArrVal(arr, idx+1, val+1);
-        arr[idx] = arr[idx]-2;
+        arr[idx] = arr[idx]-2; //backtraking step
     }
 
     public static void printArr(int arr[]) {
