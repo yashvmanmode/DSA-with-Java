@@ -22,9 +22,11 @@ public class N_Queens {
         return true;
     }
 
+    static int count  = 0;
     public static void N_Queens_problem(char ChessBoard[][], int startRow) {
         if (startRow == ChessBoard.length) {
             print(ChessBoard);
+            count++;
             return;
         }
 
@@ -49,7 +51,7 @@ public class N_Queens {
         
     }
     public static void main(String[] args) {
-        int n = 4;
+        int n = 8;
         char ChessBoard[][] = new char[n][n];
 
         //initialisation
@@ -61,6 +63,7 @@ public class N_Queens {
 
         // print(ChessBoard, n);
         N_Queens_problem(ChessBoard, 0);
+        System.out.println("the total number of ways are: " + count);
         
     }
 }
