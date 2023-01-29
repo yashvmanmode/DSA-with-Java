@@ -14,5 +14,13 @@ public class ReversePrint {
             System.out.print(list.get(i) + " ");
         }
 
+        int max = Integer.MIN_VALUE;
+        for (int i=0; i<list.size(); i++) {
+            if (list.get(i) > max){
+                max = list.get(i);
+                System.out.println(max);
+            }
+        }
+
     }
 }
