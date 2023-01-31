@@ -17,6 +17,30 @@ public class ContainerWithMaxWater {
 
         return maxWater;
     }
+
+    public static int ContainMaxWater_optemised(ArrayList<Integer> height) {
+        int maxWater = 0;
+        int leftPtr = 0;
+        int rightPtr = height.size()-1;
+
+        while(leftPtr<rightPtr) {
+            
+            int ht = Math.min(height.get(leftPtr), height.get(rightPtr));
+            int weidth = rightPtr-leftPtr;
+
+            int currWater = ht * weidth;
+            maxWater = Math.max(maxWater, currWater);
+
+            if (height.get(leftPtr)<height.get(rightPtr)){
+                leftPtr++;
+            } else{
+                rightPtr--;
+            }
+        }
+
+        return maxWater;
+    }
+
     public static void main(String[] args) {
         ArrayList<Integer> height = new ArrayList<>();
         height.add(8);
@@ -28,6 +52,6 @@ public class ContainerWithMaxWater {
         height.add(3);
         height.add(7);
 
-        System.out.println(Container_with_MaxWater(height));
+        System.out.println(ContainMaxWater_optemised(height));
     }
 }
