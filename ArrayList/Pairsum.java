@@ -22,7 +22,7 @@ public class Pairsum {
         int leftPtr = 0;
         int rightPtr = arr.size()-1;
 
-        while (leftPtr < rightPtr) {
+        while (leftPtr != rightPtr) {
             int pairSum = arr.get(leftPtr) + arr.get(rightPtr);
             if (pairSum == target)
                 return true;
@@ -48,7 +48,7 @@ public class Pairsum {
         arr.add(6);
         arr.add(7);
         arr.add(8);
-        int target = 1872;
+        int target = 1;
 
         System.out.println(Pair_Sum_Optimised(arr, target));
     }
