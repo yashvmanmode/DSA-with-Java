@@ -41,11 +41,28 @@ public class LinkedList {
         tail = newNode;
     }
 
+    public void printLL() {
+
+        Node temp = head;
+        while (temp != null) {
+
+            System.out.print(temp.data + "->");
+            temp = temp.next;
+        }
+        System.out.println("null");
+
+    }
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         ll.addLastLL(1);
         ll.addLastLL(2);
         ll.addLastLL(3);
+        ll.addLastLL(4);
+        ll.addLastLL(5);
+        ll.addLastLL(6);
+
+        ll.printLL();
 
     }
 }
