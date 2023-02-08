@@ -84,6 +84,32 @@ public class LinkedList {
         return val;
     }
 
+    public int removeLast() {
+
+        if (size == 0) {
+            System.out.println("LL is empty");
+        }
+        else if (size == 1) {
+            int val = head.data;
+            head = tail = null;
+            size--;
+            return val;
+        }
+
+        // prev = i:size-2
+        Node prev = head;
+        for (int i=0; i<size-2; i++) {
+            prev = prev.next;
+        }
+
+        int val = tail.data;
+        prev.next = null;
+        tail = prev;
+        size--;
+        return val;
+         
+    }
+
     public void printLL() {
 
         Node temp = head;
@@ -107,12 +133,10 @@ public class LinkedList {
 
         ll.printLL();
 
-        ll.addMiddle(3, 8);
-        ll.printLL();
         ll.removeFirst();
         ll.printLL();
-        System.out.println(size);
-        ll.removeFirst();
+        ll.removeLast();
+        ll.printLL();
         System.out.println(size);
     }
 }
