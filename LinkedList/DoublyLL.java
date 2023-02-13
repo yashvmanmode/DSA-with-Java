@@ -34,6 +34,26 @@ public class DoublyLL {
 
     // Remove Function
 
+    public int removeFirst() {
+        if (head == null) {
+            System.out.println("Empty LL");
+            return -1;
+        }
+
+        if (size == 1) {
+            int val = head.data;
+            head = tail = null;
+            size--;
+            return val;
+        }
+
+        int val = head.data;
+        head = head.next;
+        head.prev = null;
+        size--;
+        return val;
+    }
+
     public void print() {
         Node temp = head;
         while (temp != null) {
@@ -54,6 +74,8 @@ public class DoublyLL {
         dll.addFirst(5);
         dll.addFirst(6);
 
+        dll.print();
+        System.out.println(dll.removeFirst());
         dll.print();
     }
 }
